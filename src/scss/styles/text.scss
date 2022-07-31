@@ -1,0 +1,26 @@
+.text {
+  &--white {
+    color: white;
+  }
+  &--black {
+    color: #424347;
+  }
+  &--upper {
+    text-transform: uppercase;
+  }
+  &--center {
+    text-align: center;
+  }
+}
+
+.font {
+  &--20px {
+    font-size: 2em;
+  }
+  &--16px {
+    font-size: 1.6em;
+  }
+  &--15px {
+    font-size: 1.5em;
+  }
+}

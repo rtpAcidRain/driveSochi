@@ -1,0 +1,28 @@
+.button {
+  font-weight: 700;
+  color: #fff;
+  display: block;
+  background: linear-gradient(180deg, #ffb302 0%, #ff6d1e 100%);
+  box-shadow: 0 10px 20px rgb(0 0 0 / 57%);
+  border-radius: 5px;
+  width: fit-content;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  line-height: 1.15em;
+  white-space: nowrap;
+  cursor: pointer;
+
+  &--transparent {
+    background: none;
+    box-shadow: none;
+    border: 1px solid #ffffff;
+    backdrop-filter: blur(4px);
+  }
+
+  &--white {
+    background: #ffffff;
+    box-shadow: none;
+    backdrop-filter: blur(4px);
+    color: #57585c;
+  }
+}
