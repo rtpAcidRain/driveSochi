@@ -1322,7 +1322,6 @@ body {
   width: 100%;
   max-height: 259px;
   border-radius: 10px;
-  background-color: #c4c4c4;
 }
 
 .car .car__slider .swiper-slide {
@@ -1902,14 +1901,185 @@ body {
 .back-form__input {
   background: rgba(225, 225, 225, 0.2);
   border: 1px solid #ffffff;
+  color: #cacaca;
   padding: 1em 1.1333333333em;
+}
+
+.back-form__input::-webkit-input-placeholder {
+  color: #cacaca;
+}
+
+.back-form__input::-moz-placeholder {
+  color: #cacaca;
+}
+
+.back-form__input:-ms-input-placeholder {
+  color: #cacaca;
+}
+
+.back-form__input::-ms-input-placeholder {
+  color: #cacaca;
+}
+
+.back-form__input::placeholder {
+  color: #cacaca;
 }
 
 .back-form__button {
   background: #ff691f;
   border-radius: 0;
+  font-size: 15px;
   padding-left: 1.2em;
   padding-right: 1.2em;
+}
+
+.modal {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 100000;
+  -webkit-backdrop-filter: blur(4px);
+          backdrop-filter: blur(4px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  display: none;
+}
+
+.modal__form {
+  display: block;
+}
+
+.modal__check {
+  margin: auto;
+  min-height: 475px;
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.modal__close {
+  position: absolute;
+  background: 0;
+  top: 25px;
+  right: 25px;
+  cursor: pointer;
+}
+
+.modal__title {
+  font-size: 2.5rem;
+  text-align: center;
+  margin: 2.16em auto 2.64em;
+}
+
+.modal__container {
+  padding-bottom: 30px;
+  margin: 0 15px;
+  max-width: 772px;
+  width: 100%;
+  margin: auto;
+  -webkit-transition: -webkit-transform 0.5s ease;
+  transition: -webkit-transform 0.5s ease;
+  -o-transition: transform 0.5s ease;
+  transition: transform 0.5s ease;
+  transition: transform 0.5s ease, -webkit-transform 0.5s ease;
+  -webkit-transform: rotateX(90deg);
+          transform: rotateX(90deg);
+}
+
+.no-webp .modal__wrapper {
+  background: center/cover no-repeat url("../img/modal.jpg"); }
+
+.modal__wrapper {
+  padding: 25px 25px 0;
+  border-radius: 20px;
+  position: relative;
+  margin: 0 10px;
+}
+
+.modal__button {
+  font-family: "Segoe UI", sans-serif;
+  font-size: 1.8rem;
+  padding-left: 2.6111111111em;
+  margin: auto;
+  -webkit-transform: translateY(50%);
+      -ms-transform: translateY(50%);
+          transform: translateY(50%);
+  padding-right: 2.6111111111em;
+}
+
+.modal__back-form {
+  font-size: 15px;
+  max-width: 415px;
+  width: 100%;
+  margin: auto;
+}
+
+.modal .back-from__inputs {
+  display: -ms-grid;
+  display: grid;
+  justify-items: center;
+  gap: 20px 14px;
+  padding-bottom: 64px;
+      grid-template-areas: "username username username username" "phone phone phone phone" "date-start date-start date-end date-end";
+}
+
+.modal .back-from__inputs .date-start {
+  -ms-grid-row: 5;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: date-start;
+}
+
+.modal .back-from__inputs .date-end {
+  -ms-grid-row: 5;
+  -ms-grid-column: 5;
+  -ms-grid-column-span: 3;
+  grid-area: date-end;
+}
+
+.modal .back-from__inputs .name {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 7;
+  grid-area: username;
+}
+
+.modal .back-from__inputs .phone {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 7;
+  grid-area: phone;
+}
+
+.modal input:not([type=submit]) {
+  line-height: 1.5333333333em;
+  font-weight: 700;
+  width: 100%;
+  border-radius: 5px;
+}
+
+.check__title {
+  margin-top: 0;
+  margin-bottom: 0.6em;
+}
+
+.check__text {
+  max-width: 464px;
+  margin: 0 auto;
+  font-family: "Calibri";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 140%;
+  text-align: center;
+  text-transform: lowercase;
+  color: rgba(255, 255, 255, 0.8);
 }
 
 @media screen and (max-width: 1440px) {
@@ -2110,3 +2280,5 @@ body {
 .webp .reviews { background: center bottom/1811px 820.91px no-repeat url(../img/reviews/background.webp); }
 
 .webp .footer { background: center/cover no-repeat url(../img/footer/background.webp); }
+
+.webp .modal__wrapper { background: center/cover no-repeat url(../img/modal.webp); }
