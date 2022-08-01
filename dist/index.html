@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-  <link rel="stylesheet" href="css/style.min.css?_v=20220731234546" />
+  <link rel="stylesheet" href="css/style.min.css?_v=20220801174349" />
   <title>Главная</title>
 </head>
 
@@ -130,6 +130,86 @@
   </div>
 </div>
  <main>
+  <div class="modal" id="orderCar">
+    <div class="modal__container">
+      <div class="modal__wrapper">
+        <button class="modal__close">
+          <svg
+            width="15"
+            height="15"
+            viewBox="0 0 15 15"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <rect
+              x="1.41431"
+              y="0.414322"
+              width="18"
+              height="2"
+              rx="1"
+              transform="rotate(45 1.41431 0.414322)"
+              fill="white"
+              fill-opacity="0.7"
+            />
+            <rect
+              x="0.000732422"
+              y="12.7279"
+              width="18"
+              height="2"
+              rx="1"
+              transform="rotate(-45 0.000732422 12.7279)"
+              fill="white"
+              fill-opacity="0.7"
+            />
+          </svg>
+        </button>
+       <div class="modal__form">
+        <p class="title text--upper modal__title text--white">Забронировать машину Mustang</p>
+        <form action="mailCarForm.php" method="post" id="orderCarForm" class="back-form modal__back-form">
+          <div class="back-from__inputs">
+            <input
+              type="text"
+              class="name back-form__input"
+              name="modal_username"
+              placeholder="Имя"
+              required
+            />
+            <input
+              type="text"
+              class="phone back-form__input"
+              name="modal_phone"
+              placeholder="Номер телефона"
+              required
+            />
+            <input
+              onfocus="(this.type='date')"
+              type="text"
+              class="date-start back-form__input"
+              name="modal_date-start"
+              placeholder="Начало аренды"
+            />
+            <input
+              onfocus="(this.type='date')"
+              type="text"
+              class="date-end back-form__input"
+              name="modal_date-end"
+              placeholder="Окончание аренды"
+            />
+          </div>
+
+          <input type="submit" value="Забронировать" id="carFormOrderButton" class="button modal__button submit" />
+       </div>
+       <div class="modal__check">
+          <p class="title text--upper  modal__title check__title text--white">Спасибо. <br/>
+          Мы получили вашу заявку</p>
+          <p class="check__text">
+            Наш менеджер перезвонит вам в течении 15 мин. для уточнения всех деталей
+          </p>
+       </div>
+        </form>
+      </div>
+    </div>
+  </div>
   <!-- Главная -->
   <section class="main">
     <div class="container">
@@ -155,38 +235,45 @@
           <div class="car__slider swiper" id="fordGreen">
             <div class="swiper-wrapper">
               <div class="swiper-slide">
-                <img src="img/park/fordGreen/slide1.jpg" alt="slide" />
+                <img class="swiper-lazy" data-src="img/park/fordGreen/slide1.jpg" alt="slide" />
+                <div class="swiper-lazy-preloader"></div>
               </div>
               <div class="swiper-slide">
-                <img src="img/park/fordGreen/slide2.jpg" alt="slide" />
+                <img class="swiper-lazy" data-src="img/park/fordGreen/slide2.jpg" alt="slide" />
+                <div class="swiper-lazy-preloader"></div>
               </div>
               <div class="swiper-slide">
-                <img src="img/park/fordGreen/slide3.jpg" alt="slide" />
+                <img class="swiper-lazy" data-src="img/park/fordGreen/slide3.jpg" alt="slide" />
+                <div class="swiper-lazy-preloader"></div>
               </div>
               <div class="swiper-slide">
-                <img src="img/park/fordGreen/slide4.jpg" alt="slide" />
+                <img class="swiper-lazy" data-src="img/park/fordGreen/slide4.jpg" alt="slide" />
+                <div class="swiper-lazy-preloader"></div>
               </div>
               <div class="swiper-slide">
-                <img src="img/park/fordGreen/slide5.jpg" alt="slide" />
+                <img class="swiper-lazy" data-src="img/park/fordGreen/slide5.jpg" alt="slide" />
+                <div class="swiper-lazy-preloader"></div>
               </div>
               <div class="swiper-slide">
-                <img src="img/park/fordGreen/slide6.jpg" alt="slide" />
+                <img class="swiper-lazy" data-src="img/park/fordGreen/slide6.jpg" alt="slide" />
+                <div class="swiper-lazy-preloader"></div>
               </div>
               <div class="swiper-slide">
-                <img src="img/park/fordGreen/slide7.jpg" alt="slide" />
+                <img class="swiper-lazy" data-src="img/park/fordGreen/slide7.jpg" alt="slide" />
+                <div class="swiper-lazy-preloader"></div>
               </div>
             </div>
             <div class="swiper__controller">
               <div class="controller__wrapper">
-                <div class="fordGreen-prev swiper-button-prev"></div>
-                <div class="fordGreen-pag swiper-pagination"></div>
-                <div class="fordGreen-next swiper-button-next"></div>
+                <div class="car-button-prev swiper-button-prev"></div>
+                <div class="car-button-pag swiper-pagination"></div>
+                <div class="car-button-next swiper-button-next"></div>
               </div>
             </div>
           </div>
           <header class="car__header">
             <div class="header--left">
-              <h6 class="car__title title text--white">FORD MUSTANG</h6>
+              <p class="car__title title text--white">FORD MUSTANG</p>
               <p class="car__price">Цена: 13 000 руб./сутки</p>
             </div>
             <div class="header--right">
@@ -197,167 +284,30 @@
           </header>
           <main class="car__main">
             <ul class="car__stats">
-              <div class="car__stat">
+              <li class="car__stat">
                 <span class="stat__name">Коробка:</span><span class="stat">Автомат</span>
-              </div>
-              <div class="car__stat">
+              </li>
+              <li class="car__stat">
                 <span class="stat__name">Двигатель:</span><span class="stat">2.3</span>
-              </div>
-              <div class="car__stat">
+              </li>
+              <li class="car__stat">
                 <span class="stat__name">Л.С :</span><span class="stat">317</span>
-              </div>
-              <div class="car__stat">
+              </li>
+              <li class="car__stat">
                 <span class="stat__name">Год выпуска:</span><span class="stat">2017</span>
-              </div>
-              <div class="car__stat">
+              </li>
+              <li class="car__stat">
                 <span class="stat__name">Кол - во мест:</span><span class="stat">4</span>
-              </div>
-              <div class="car__stat">
-                <span class="stat__name">Цвет:</span><span class="stat">Green(зеленый)</span>
-              </div>
+              </li>
+              <li class="car__stat">
+                <span class="stat__name">Цвет:</span
+                ><span class="stat car__color">Green(зеленый)</span>
+              </li>
             </ul>
           </main>
-          <a href="/" class="button car__button">Забронировать</a>
-        </div>
-      </article>
-      <article class="car">
-        <div class="car__wrapper">
-          <div class="car__slider swiper" id="dodgeRed">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <img src="img/park/fordGreen/slide1.jpg" alt="slide" />
-              </div>
-              <div class="swiper-slide">
-                <img src="img/park/fordGreen/slide2.jpg" alt="slide" />
-              </div>
-              <div class="swiper-slide">
-                <img src="img/park/fordGreen/slide3.jpg" alt="slide" />
-              </div>
-              <div class="swiper-slide">
-                <img src="img/park/fordGreen/slide4.jpg" alt="slide" />
-              </div>
-              <div class="swiper-slide">
-                <img src="img/park/fordGreen/slide5.jpg" alt="slide" />
-              </div>
-              <div class="swiper-slide">
-                <img src="img/park/fordGreen/slide6.jpg" alt="slide" />
-              </div>
-              <div class="swiper-slide">
-                <img src="img/park/fordGreen/slide7.jpg" alt="slide" />
-              </div>
-            </div>
-            <div class="swiper__controller">
-              <div class="controller__wrapper">
-                <div class="fordGreen-prev swiper-button-prev"></div>
-                <div class="fordGreen-pag swiper-pagination"></div>
-                <div class="fordGreen-next swiper-button-next"></div>
-              </div>
-            </div>
-          </div>
-          <header class="car__header">
-            <div class="header--left">
-              <h6 class="car__title title text--white">DODGE CHALLENGER 5.7 HEMI</h6>
-              <p class="car__price">Цена: 22 000 руб./сутки</p>
-            </div>
-            <div class="header--right">
-              <p class="car__rate">от 2 дней - 21000 руб./сутки</p>
-              <p class="car__rate">от 3 дней - 20000 руб./сутки</p>
-              <p class="car__pledge"><span class="text--white">Залог:</span> 50 000 руб.</p>
-            </div>
-          </header>
-          <main class="car__main">
-            <ul class="car__stats">
-              <div class="car__stat">
-                <span class="stat__name">Коробка:</span><span class="stat">Автомат</span>
-              </div>
-              <div class="car__stat">
-                <span class="stat__name">Двигатель:</span><span class="stat">5.7 V8 HEMI</span>
-              </div>
-              <div class="car__stat">
-                <span class="stat__name">Л.С :</span><span class="stat">420</span>
-              </div>
-              <div class="car__stat">
-                <span class="stat__name">Год выпуска:</span><span class="stat">2019</span>
-              </div>
-              <div class="car__stat">
-                <span class="stat__name">Кол - во мест:</span><span class="stat">4</span>
-              </div>
-              <div class="car__stat">
-                <span class="stat__name">Цвет:</span><span class="stat">Calypso Red</span>
-              </div>
-            </ul>
-          </main>
-          <a href="/" class="button car__button">Забронировать</a>
-        </div>
-      </article>
-      <article class="car">
-        <div class="car__wrapper">
-          <div class="car__slider swiper" id="fordGreen">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <img src="img/park/fordGreen/slide1.jpg" alt="slide" />
-              </div>
-              <div class="swiper-slide">
-                <img src="img/park/fordGreen/slide2.jpg" alt="slide" />
-              </div>
-              <div class="swiper-slide">
-                <img src="img/park/fordGreen/slide3.jpg" alt="slide" />
-              </div>
-              <div class="swiper-slide">
-                <img src="img/park/fordGreen/slide4.jpg" alt="slide" />
-              </div>
-              <div class="swiper-slide">
-                <img src="img/park/fordGreen/slide5.jpg" alt="slide" />
-              </div>
-              <div class="swiper-slide">
-                <img src="img/park/fordGreen/slide6.jpg" alt="slide" />
-              </div>
-              <div class="swiper-slide">
-                <img src="img/park/fordGreen/slide7.jpg" alt="slide" />
-              </div>
-            </div>
-            <div class="swiper__controller">
-              <div class="controller__wrapper">
-                <div class="fordGreen-prev swiper-button-prev"></div>
-                <div class="fordGreen-pag swiper-pagination"></div>
-                <div class="fordGreen-next swiper-button-next"></div>
-              </div>
-            </div>
-          </div>
-          <header class="car__header">
-            <div class="header--left">
-              <h6 class="car__title title text--white">FORD MUSTANG</h6>
-              <p class="car__price">Цена: 13 000 руб./сутки</p>
-            </div>
-            <div class="header--right">
-              <p class="car__rate">от 2 дней - 12500 руб./сутки</p>
-              <p class="car__rate">от 3 дней - 12000 руб./сутки</p>
-              <p class="car__pledge"><span class="text--white">Залог:</span> 30 000 руб.</p>
-            </div>
-          </header>
-          <main class="car__main">
-            <ul class="car__stats">
-              <div class="car__stat">
-                <span class="stat__name">Коробка:</span><span class="stat">Автомат</span>
-              </div>
-              <div class="car__stat">
-                <span class="stat__name">Двигатель:</span><span class="stat">2.3</span>
-              </div>
-              <div class="car__stat">
-                <span class="stat__name">Л.С :</span><span class="stat">317</span>
-              </div>
-              <div class="car__stat">
-                <span class="stat__name">Год выпуска:</span><span class="stat">2017</span>
-              </div>
-              <div class="car__stat">
-                <span class="stat__name">Кол - во мест:</span><span class="stat">4</span>
-              </div>
-              <div class="car__stat">
-                <span class="stat__name">Цвет:</span><span class="stat">Green(зеленый)</span>
-              </div>
-            </ul>
-          </main>
-          <a href="/" class="button car__button">Забронировать</a>
+          <a href="/" data-modal="orderCar" class="button car__button order-car__button"
+            >Забронировать</a
+          >
         </div>
       </article>
     </div>
@@ -547,13 +497,22 @@
       <div class="reviews__slider swiper">
         <div class="swiper-wrapper">
           <div class="swiper-slide">
-            <img class="review" src="img/reviews/slides/slide1.png" alt="review1" />
+            <picture>
+              <source srcset="img/reviews/slides/slide1.webp" type="image/webp" />
+              <img class="review" src="img/reviews/slides/slide1.png" alt="review1" />
+            </picture>
           </div>
           <div class="swiper-slide">
-            <img class="review" src="img/reviews/slides/slide2.png" alt="review2" />
+            <picture>
+              <source srcset="img/reviews/slides/slide2.webp" type="image/webp" />
+              <img class="review" src="img/reviews/slides/slide2.png" alt="review2" />
+            </picture>
           </div>
           <div class="swiper-slide">
-            <img class="review" src="img/reviews/slides/slide3.png" alt="review3" />
+            <picture>
+              <source srcset="img/reviews/slides/slide3.webp" type="image/webp" />
+              <img class="review" src="img/reviews/slides/slide3.png" alt="review3" />
+            </picture>
           </div>
         </div>
         <div class="reviews__slider-button-prev swiper-button-prev"></div>
@@ -562,22 +521,38 @@
     </div>
   </section>
 </main>
-`
  <footer class="footer" id="contacts">
   <div class="container">
     <h2 class="title footer__title text--white text--upper">Свяжитесь с нами</h2>
     <p class="footer__text">Поможем с выбором и ответим на вопросы.</p>
     <p class="footer__text">Принимаем ваши автомобили в субаренду!</p>
     <div class="footer__content">
-      <form action="post" class="footer__form back-form" id="footerForm">
-        <input type="text" class="name back-form__input" name="username" placeholder="Имя" />
+      <form
+        action="mailFeedbackForm.php"
+        class="footer__form back-form"
+        method="post"
+        id="footerForm"
+      >
+        <input
+          type="text"
+          class="name back-form__input"
+          name="username"
+          placeholder="Имя"
+          required
+        />
         <input
           type="text"
           class="phone back-form__input"
           name="phone"
           placeholder="Номер телефона"
+          required
         />
-        <textarea class="message back-form__input" placeholder="Сообщение"></textarea>
+        <textarea
+          name="message"
+          class="message back-form__input"
+          placeholder="Сообщение"
+          required
+        ></textarea>
         <input type="submit" value="Отправить" class="back-form__button button submit" />
       </form>
       <ul class="footer__links links__list text--white">
@@ -631,7 +606,7 @@
           <a class="text--white" href="mailto:mustang@mail.ru">mustang@mail.ru</a>
         </li>
         <li class="links__item">
-          <a href="">
+          <a href="/">
             <svg
               width="30"
               height="30"
@@ -682,6 +657,6 @@
 
     </div>
 
-    <script src="js/app.min.js?_v=20220731234546"></script>
+    <script src="js/app.min.js?_v=20220801174349"></script>
   </body>
 </html>
