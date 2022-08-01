@@ -4,15 +4,32 @@
     <p class="footer__text">Поможем с выбором и ответим на вопросы.</p>
     <p class="footer__text">Принимаем ваши автомобили в субаренду!</p>
     <div class="footer__content">
-      <form action="post" class="footer__form back-form" id="footerForm">
-        <input type="text" class="name back-form__input" name="username" placeholder="Имя" />
+      <form
+        action="mailFeedbackForm.php"
+        class="footer__form back-form"
+        method="post"
+        id="footerForm"
+      >
+        <input
+          type="text"
+          class="name back-form__input"
+          name="username"
+          placeholder="Имя"
+          required
+        />
         <input
           type="text"
           class="phone back-form__input"
           name="phone"
           placeholder="Номер телефона"
+          required
         />
-        <textarea class="message back-form__input" placeholder="Сообщение"></textarea>
+        <textarea
+          name="message"
+          class="message back-form__input"
+          placeholder="Сообщение"
+          required
+        ></textarea>
         <input type="submit" value="Отправить" class="back-form__button button submit" />
       </form>
       <ul class="footer__links links__list text--white">
@@ -66,7 +83,7 @@
           <a class="text--white" href="mailto:mustang@mail.ru">mustang@mail.ru</a>
         </li>
         <li class="links__item">
-          <a href="">
+          <a href="/">
             <svg
               width="30"
               height="30"

@@ -124,7 +124,6 @@ body {
     width: 100%;
     max-height: 259px;
     border-radius: 10px;
-    background-color: #c4c4c4;
     .swiper {
       &-slide {
         max-width: 410px;
@@ -137,6 +136,11 @@ body {
         img {
           width: 100%;
           border-radius: 10px;
+        }
+        &.slide {
+          &--center {
+            align-items: center;
+          }
         }
       }
       &__controller {
@@ -645,6 +649,8 @@ body {
 
     * {
       height: 32px;
+      display: flex;
+      align-items: center;
     }
     &:not(:last-child) {
       svg {
@@ -662,15 +668,137 @@ body {
   &__input {
     background: rgba(225, 225, 225, 0.2);
     border: 1px solid #ffffff;
-
+    color: #cacaca;
     padding: 1em 1.133333333333333em;
+    &::placeholder {
+      color: #cacaca;
+    }
   }
 
   &__button {
     background: #ff691f;
     border-radius: 0;
+    font-size: 15px;
     padding-left: 1.2em;
     padding-right: 1.2em;
   }
 }
+// ===========================================>
+
+// MODAL
+
+.modal {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 100000;
+  backdrop-filter: blur(4px);
+  display: flex;
+  display: none;
+  &__form {
+    display: block;
+  }
+  &__check {
+    margin: auto;
+    min-height: 475px;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+  }
+  &__close {
+    position: absolute;
+    background: 0;
+    top: 25px;
+    right: 25px;
+    cursor: pointer;
+  }
+  &__title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin: 2.16em auto 2.64em;
+  }
+  &__container {
+    padding-bottom: 30px;
+    margin: 0 15px;
+    max-width: 772px;
+    width: 100%;
+    margin: auto;
+    transition: transform 0.5s ease;
+    transform: rotateX(90deg);
+  }
+  &__wrapper {
+    padding: 25px 25px 0;
+    border-radius: 20px;
+    background: center / cover no-repeat url('../img/modal.jpg');
+    position: relative;
+    margin: 0 10px;
+  }
+  &__button {
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 1.8rem;
+    padding-left: 2.611111111111111em;
+    margin: auto;
+    transform: translateY(50%);
+    padding-right: 2.611111111111111em;
+  }
+  &__back-form {
+    font-size: 15px;
+    max-width: 415px;
+    width: 100%;
+    margin: auto;
+  }
+
+  .back-from__inputs {
+    display: grid;
+    justify-items: center;
+    gap: 20px 14px;
+    padding-bottom: 64px;
+
+    grid-template-areas:
+      'username username username username'
+      'phone phone phone phone'
+      'date-start date-start date-end date-end';
+
+    .date-start {
+      grid-area: date-start;
+    }
+    .date-end {
+      grid-area: date-end;
+    }
+    .name {
+      grid-area: username;
+    }
+    .phone {
+      grid-area: phone;
+    }
+  }
+  input:not([type='submit']) {
+    line-height: 1.533333333333333em;
+    font-weight: 700;
+    width: 100%;
+    border-radius: 5px;
+  }
+}
+
+.check {
+  &__title {
+    margin-top: 0;
+    margin-bottom: 0.6em;
+  }
+  &__text {
+    max-width: 464px;
+    margin: 0 auto;
+    font-family: 'Calibri';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 2rem;
+    line-height: 140%;
+
+    text-align: center;
+    text-transform: lowercase;
+
+    color: rgba(255, 255, 255, 0.8);
+  }
+}
+
 // ===========================================>

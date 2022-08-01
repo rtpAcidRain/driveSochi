@@ -1,5 +1,5 @@
 {
-  "name": "abk_studio",
+  "name": "drive_sochi",
   "version": "1.0.0",
   "description": "",
   "main": "gulpfile.js",
@@ -46,6 +46,7 @@
   },
   "dependencies": {
     "gulp-cli": "^2.3.0",
+    "jquery": "^3.6.0",
     "swiper": "^8.3.2",
     "wow.js": "^1.2.2"
   }

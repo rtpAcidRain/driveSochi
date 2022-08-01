@@ -1,4 +1,84 @@
 <main>
+  <div class="modal" id="orderCar">
+    <div class="modal__container">
+      <div class="modal__wrapper">
+        <button class="modal__close">
+          <svg
+            width="15"
+            height="15"
+            viewBox="0 0 15 15"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <rect
+              x="1.41431"
+              y="0.414322"
+              width="18"
+              height="2"
+              rx="1"
+              transform="rotate(45 1.41431 0.414322)"
+              fill="white"
+              fill-opacity="0.7"
+            />
+            <rect
+              x="0.000732422"
+              y="12.7279"
+              width="18"
+              height="2"
+              rx="1"
+              transform="rotate(-45 0.000732422 12.7279)"
+              fill="white"
+              fill-opacity="0.7"
+            />
+          </svg>
+        </button>
+       <div class="modal__form">
+        <p class="title text--upper modal__title text--white">Забронировать машину Mustang</p>
+        <form action="mailCarForm.php" method="post" id="orderCarForm" class="back-form modal__back-form">
+          <div class="back-from__inputs">
+            <input
+              type="text"
+              class="name back-form__input"
+              name="modal_username"
+              placeholder="Имя"
+              required
+            />
+            <input
+              type="text"
+              class="phone back-form__input"
+              name="modal_phone"
+              placeholder="Номер телефона"
+              required
+            />
+            <input
+              onfocus="(this.type='date')"
+              type="text"
+              class="date-start back-form__input"
+              name="modal_date-start"
+              placeholder="Начало аренды"
+            />
+            <input
+              onfocus="(this.type='date')"
+              type="text"
+              class="date-end back-form__input"
+              name="modal_date-end"
+              placeholder="Окончание аренды"
+            />
+          </div>
+
+          <input type="submit" value="Забронировать" id="carFormOrderButton" class="button modal__button submit" />
+       </div>
+       <div class="modal__check">
+          <p class="title text--upper  modal__title check__title text--white">Спасибо. <br/>
+          Мы получили вашу заявку</p>
+          <p class="check__text">
+            Наш менеджер перезвонит вам в течении 15 мин. для уточнения всех деталей
+          </p>
+       </div>
+        </form>
+      </div>
+    </div>
+  </div>
   <!-- Главная -->
   <section class="main">
     <div class="container">
@@ -148,7 +228,7 @@
               Мы гарантируем быстрое оформление и лучшее обслуживание, при соблюдении простых правил
               и условий аренды.
             </div>
-            <a href="/" class="content__button button px--28 m-auto">Свяжитесь с нами</a>
+            <a href="#contacts" class="content__button button px--28 m-auto navigate">Свяжитесь с нами</a>
           </div>
         </div>
       </div>
@@ -200,13 +280,22 @@
       <div class="reviews__slider swiper">
         <div class="swiper-wrapper">
           <div class="swiper-slide">
-            <img class="review" src="img/reviews/slides/slide1.png" alt="review1" />
+            <picture>
+              <source srcset="img/reviews/slides/slide1.webp" type="image/webp" />
+              <img class="review" src="img/reviews/slides/slide1.png" alt="review1" />
+            </picture>
           </div>
           <div class="swiper-slide">
-            <img class="review" src="img/reviews/slides/slide2.png" alt="review2" />
+            <picture>
+              <source srcset="img/reviews/slides/slide2.webp" type="image/webp" />
+              <img class="review" src="img/reviews/slides/slide2.png" alt="review2" />
+            </picture>
           </div>
           <div class="swiper-slide">
-            <img class="review" src="img/reviews/slides/slide3.png" alt="review3" />
+            <picture>
+              <source srcset="img/reviews/slides/slide3.webp" type="image/webp" />
+              <img class="review" src="img/reviews/slides/slide3.png" alt="review3" />
+            </picture>
           </div>
         </div>
         <div class="reviews__slider-button-prev swiper-button-prev"></div>
@@ -215,4 +304,3 @@
     </div>
   </section>
 </main>
-`
