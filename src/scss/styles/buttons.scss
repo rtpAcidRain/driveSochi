@@ -11,18 +11,50 @@
   line-height: 1.15em;
   white-space: nowrap;
   cursor: pointer;
+  position: relative;
+
+  &:not(.button--transparent, .button--white):hover {
+    top: -6px;
+  }
 
   &--transparent {
     background: none;
     box-shadow: none;
     border: 1px solid #ffffff;
     backdrop-filter: blur(4px);
+    -webkit-transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
+    -webkit-transition: color 300ms ease-in-out, -webkit-box-shadow 300ms ease-in-out;
+    transition: color 300ms ease-in-out, -webkit-box-shadow 300ms ease-in-out;
+    transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
+    transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out,
+      -webkit-box-shadow 300ms ease-in-out;
+    &:hover {
+      color: #57585c;
+      outline: 0;
+      -webkit-box-shadow: 0 0 40px 40px #ffffff inset;
+      box-shadow: 0 0 40px 40px #ffffff inset;
+    }
   }
 
   &--white {
-    background: #ffffff;
+    background: none;
     box-shadow: none;
     backdrop-filter: blur(4px);
     color: #57585c;
+    outline: 0;
+    -webkit-box-shadow: 0 0 40px 40px #ffffff inset;
+    box-shadow: 0 0 40px 40px #ffffff inset;
+    -webkit-transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
+    -webkit-transition: color 300ms ease-in-out, -webkit-box-shadow 300ms ease-in-out;
+    transition: color 300ms ease-in-out, -webkit-box-shadow 300ms ease-in-out;
+    transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
+    transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out,
+      -webkit-box-shadow 300ms ease-in-out;
+    border: 1px solid #ffffff;
+    &:hover {
+      box-shadow: none;
+      backdrop-filter: blur(4px);
+      color: #fff;
+    }
   }
 }
