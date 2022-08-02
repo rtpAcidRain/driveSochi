@@ -242,8 +242,9 @@ body {
   }
   .stat {
     color: #fff;
+    display: inline-block;
     &__name {
-      width: 97px;
+      width: 110px;
       margin-right: 3px;
       display: inline-block;
     }

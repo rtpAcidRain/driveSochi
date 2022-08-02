@@ -11,13 +11,14 @@
     display: flex;
     align-items: center;
     .title {
-      font-size: 2.5em;
-      line-height: 1.64em;
-      margin-left: 4px;
+      font-family: 'Chonburi', cursive;
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 1.2em;
+      margin-left: 0.4em;
       color: #ffffff;
       white-space: nowrap;
       position: relative;
-      top: -3px;
     }
   }
   &__buttons {
@@ -37,6 +38,9 @@
   max-width: 440px;
   width: 100%;
   margin: 0 30px;
+  @media screen and (max-width: 860px) {
+    margin: 0 15px;
+  }
   &__items {
     width: 100%;
     display: flex;
@@ -101,7 +105,7 @@
   }
 
   &__navigation {
-    display: block;
+    display: block !important;
     margin: 0;
     .navigation__items {
       flex-direction: column;
