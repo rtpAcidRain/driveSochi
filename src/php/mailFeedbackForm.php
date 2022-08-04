@@ -10,8 +10,8 @@ $message = $_POST['message'];
 //$mail->SMTPDebug = 3;                               // Enable verbose debug output
 
 
-$mail->setFrom('matweev.ilja@yandex.ru'); // от кого будет уходить письмо?
-$mail->addAddress('matweev.ilja@yandex.ru');     // Кому будет уходить письмо 
+$mail->setFrom('info@sochi-cabriolet.ru'); // от кого будет уходить письмо?
+$mail->addAddress('info@sochi-cabriolet.ru');     // Кому будет уходить письмо 
 //$mail->addAddress('ellen@example.com');               // Name is optional
 //$mail->addReplyTo('info@example.com', 'Information');
 //$mail->addCC('cc@example.com');
